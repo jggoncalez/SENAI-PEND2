@@ -38,6 +38,7 @@ function renderizarDashboard(listaSensores) {
       </div>
       <span class="card-tipo">${sensor.tipo}</span>
       <button type="button">Histórico</button>
+      <span class="card-status">${sensor.status}</span>
     `;
 
     container.appendChild(card);
@@ -56,9 +57,9 @@ function aplicarFiltro() {
   const tipoSelecionado = filtroTipo.value;
 
   const listaFiltrada =
-    tipoSelecionado === "Todos"
+    tipoSelecionado === "todos"
       ? sensoresIniciais
-      : sensoresIniciais.filter((sensor) => sensor.tipo === tipoSelecionado);
+      : sensoresIniciais.filter((sensor) => sensor.status === tipoSelecionado);
 
   renderizarDashboard(listaFiltrada);
 }
@@ -82,7 +83,7 @@ function atualizarValoresSensores() {
 filtroTipo.addEventListener("change", aplicarFiltro);
 btnAtualizar.addEventListener("click", atualizarValoresSensores);
 
-setInterval(atualizarValoresSensores, 30000);
+setInterval(atualizarValoresSensores, 3000);
 
 renderizarDashboard(sensoresIniciais);
 atualizarHorario();
