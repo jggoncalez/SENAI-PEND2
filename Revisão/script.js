@@ -59,7 +59,7 @@ function aplicarFiltro() {
   const listaFiltrada =
     tipoSelecionado === "todos"
       ? sensoresIniciais
-      : sensoresIniciais.filter((sensor) => sensor.status === tipoSelecionado);
+      : sensoresIniciais.filter((sensor) => sensor.tipo === tipoSelecionado);
 
   renderizarDashboard(listaFiltrada);
 }
