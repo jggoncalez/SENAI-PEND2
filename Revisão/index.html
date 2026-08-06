@@ -8,12 +8,12 @@
 </head>
 <body>
   <header class="header">
-    
+
     <h1>Dashboard de Sensores</h1>
-    <div class="status-conexao" id="statusConexao">
+    <button type="button" class="status-conexao" id="statusConexao" aria-pressed="true">
       <span class="status-dot"></span>
       <span id="statusTexto">Online</span>
-    </div>
+    </button>
   </header>
 
   <main class="main">
@@ -36,6 +36,16 @@
     <p>&copy; 2026 Dashboard de Sensores. Todos os direitos reservados.</p>
     <p>Última atualização: <span id="ultimaAtualizacao">--:--:--</span></p>
   </footer>
+
+  <div class="modal-overlay" id="modalHistorico" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <div class="modal-header">
+        <h2 id="modalTitulo">Histórico</h2>
+        <button type="button" id="btnFecharModal" aria-label="Fechar">&times;</button>
+      </div>
+      <ol class="modal-lista" id="modalLista"></ol>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

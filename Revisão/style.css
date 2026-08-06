@@ -51,6 +51,17 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.status-conexao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .status-dot {
@@ -145,6 +156,75 @@ body {
 .card-alerta {
   background-color: var(--cor-alerta-fundo);
   border-color: var(--cor-alerta-borda);
+}
+
+.card-pausado {
+  opacity: 0.6;
+  position: relative;
+}
+
+.card-pausado-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--cor-offline);
+  text-transform: uppercase;
+}
+
+/* Modal de histórico */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  background-color: var(--cor-card);
+  border-radius: 10px;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--cor-texto);
+}
+
+.modal-lista {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.4rem;
 }
 
 /* Footer */
