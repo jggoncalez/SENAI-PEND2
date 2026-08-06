@@ -57,7 +57,7 @@ function aplicarFiltro() {
   const tipoSelecionado = filtroTipo.value;
 
   const listaFiltrada =
-    tipoSelecionado === "todos"
+    tipoSelecionado === "Todos"
       ? sensoresIniciais
       : sensoresIniciais.filter((sensor) => sensor.tipo === tipoSelecionado);
 
